@@ -227,20 +227,20 @@ a[href$="#s"] {
 
 .stickied {
   .entry {
-    border-color: @StickyBorder;
+    border-color: @StickyBorder !important;
     border-style: solid;
     border-width: 1px;
   }
 
   .entry.RES-keyNav-activeElement {
-    border-left: @RES-keynav-borderThickness @StickyBorder solid;
+    border-left: @RES-keynav-borderThickness @StickyBorder solid !important;
     padding-left: 10px;
     transition: ease-in 0.2s;
     background-color: transparent !important;
   }
 
   .entry:not(.RES-keyNav-activeElement) {
-    border-left: @StickyBorder solid 1px;
+    border-left: @StickyBorder solid 1px !important;
     padding-left: 2px;
     transition: ease-in 0.2s;
     background-color: transparent !important;
