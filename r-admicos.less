@@ -1,0 +1,303 @@
+//out: r-admicos.compiled.css, compress: true
+
+/*
+ * /r/admicos's theme. Can't think of a name yet.
+ * by /u/admicos.
+ *
+ * Unless you don't delete this disclaimer/copyright thing. You can do whatever
+ * you want with the css.
+ */
+
+/*
+ * How to use:
+ *
+ * So, if you just put this on the subreddit style thingie it will not work. To
+ * fix this. You need to convert this to css.
+ *
+ * First: open up a LESS converter like http://lesscss.org/less-preview/.
+ * Second: Put this code at the left field
+ * Third: Get the code at the right field
+ * OPTIONAL Third-and-a-half-th: Minify the code in somewhere like http://cssminifier.com/.
+ * Fourth: Put the code at the right field to the subreddit style thingie.
+ * Fifth: umm... Profit?
+*/
+
+/* Customize here */
+
+@text-color: #111111;
+//The color of the text used in the most of the subreddit
+
+@background-color: #eeeeee;
+//Subreddit's background color
+
+@header-color: rgb(0, 178, 255);
+//Subreddit's header color
+//PROTIP: Change the header color to a image by putting `url(%%image%%)` instead of a color.
+
+@header-height: 75px;
+//Height of the header. Recommend changing if you have a header image.
+
+@margins: 1%;
+//The empty space to the sides of the page. (A little bit darker because shadows.)
+
+@shadow-color: rgba(0,0,0,0.50);
+//The shadow color used in the margins of the page.
+
+@shadow-color-header: rgba(0,0,0,0.75);
+//The shadow color used in the header
+
+@OPNameColor: rgb(0, 26, 255);
+//The color of the OP's name in the comments.
+
+@StickyBorder: #00ff00;
+//The border color for the sticky posts.
+
+@readers-text: " people subscribed";
+@usershere-text: " currently browsing";
+//You probably already understand what these are.
+
+/* RES */
+@RES-keynav-borderColor: rgb(0, 150, 252);
+//Color of the keyNav helper.
+
+@RES-keynav-borderThickness: 10px;
+//Thickness of the keyNav helper.
+
+/*=============================================================*/
+/* Don't do anything below unless you know what are you doing. */
+/*=============================================================*/
+
+.morelink {
+  .nub {
+    display: none;
+  }
+}
+
+.side,
+.titlebox form.toggle,
+.leavemoderator,
+.leavecontributor-button,
+.flairtoggle,
+.icon-menu a,
+.spacer .sidebox .spacer {
+  background-color: transparent;
+  color: @text-color;
+}
+
+div.titlebox {
+    span.word {
+      display:none;
+    }
+    span.number:after {
+      content: @readers-text;
+    }
+}
+.users-online {
+  .word {
+    display:none;
+  }
+  .word,
+  .number:after {
+      content: @usershere-text !important;
+  }
+}
+
+a[href$="#s"] {
+    color: transparent;
+    text-shadow: 0 0 15px #000, 0 0 15px #eee, 0 0 15px #000, 0 0 15px #333;
+    transition: ease-in-out 0.2s;
+
+    &:hover {
+        color: inherit;
+        transition: ease-in-out 0.5s;
+        cursor: default;
+        text-shadow: none;
+    }
+
+    &:before {
+        text-shadow: none;
+        color: gray;
+    }
+}
+
+#sr-header-area {
+  #RESShortcutsViewport,
+  #RESShortcutsEditContainer {
+    #RESShortcutsSort,
+    #RESShortcutsRight,
+    #RESShortcutsAdd,
+    #RESShortcutsTrash,
+    #RESShortcutsLeft {
+      background-color: inherit;
+    }
+    background-color: inherit;
+  }
+  background-color: rgba(168, 168, 168, 0.2);
+}
+
+#header-bottom-left {
+  background: @header-color;
+  height: @header-height;
+  box-shadow: inset 0px 43px 121px -61px @shadow-color-header;
+}
+
+#header-bottom-right {
+  background: transparent;
+
+  #userbarToggle {
+    background: transparent;
+    border-right: 0;
+  }
+
+  .user {
+    color: white;
+
+    a {
+      margin-left: 10px;
+    }
+  }
+
+  .seperator {
+    color: white;
+  }
+
+  a {
+    color: white;
+    font-weight: bold;
+  }
+}
+
+#header-img,
+.redditname a,
+.tabmenu {
+  display: inline;
+  float: left;
+}
+
+.pagename {
+  bottom: 25%;
+  left: 3%;
+  position: absolute;
+  font-size: 50px;
+  font-weight: bolder;
+  color: white;
+  font-family: Sans;
+
+  a {
+    color: white;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+#header-img {
+  width: 32px !important;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.tabmenu {
+  position: absolute;
+  bottom: 10px;
+  left: 35px;
+
+  li a {
+    border-radius: 25%;
+    border-color: #369;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    padding-bottom: 5px;
+  }
+
+  li.selected a {
+    border-color: orangered;
+  }
+}
+
+.side {
+  .spacer:nth-child(5) .titlebox .usertext .usertext-body .md {
+    border: 1px solid gray;
+    background-color: lighten(@background-color, 10%);
+  }
+}
+
+.stickied {
+  .entry {
+    border-color: @StickyBorder;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  .entry.RES-keyNav-activeElement {
+    border-left: @RES-keynav-borderThickness @StickyBorder solid;
+    padding-left: 10px;
+    transition: ease-in 0.2s;
+    background-color: transparent !important;
+  }
+
+  .entry:not(.RES-keyNav-activeElement) {
+    border-left: @StickyBorder solid 1px;
+    padding-left: 2px;
+    transition: ease-in 0.2s;
+    background-color: transparent !important;
+  }
+}
+
+body {
+    background-color: @background-color;
+    margin-right: @margins;
+    margin-left: @margins;
+    -webkit-box-shadow: 0px 0px 195px -13px @shadow-color;
+    -moz-box-shadow: 0px 0px 195px -13px @shadow-color;
+    box-shadow: 0px 0px 195px -13px @shadow-color;
+}
+
+.res {
+  .beta-link {
+    margin-left: -40px;
+    margin-top: 2px;
+  }
+
+  .entry.RES-keyNav-activeElement {
+    border-left: @RES-keynav-borderThickness @RES-keynav-borderColor solid;
+    padding-left: 10px;
+    transition: ease-in 0.2s;
+    background-color: transparent !important;
+  }
+
+  .entry:not(.RES-keyNav-activeElement) {
+    border-left: 0;
+    padding-left: 0;
+    transition: ease-in 0.2s;
+    background-color: transparent !important;
+  }
+}
+
+.message-count {
+  background-color: orangered;
+  line-height: 10px;
+  margin-left: -1px;
+  border-radius: 0;
+  padding: 0;
+}
+
+.author.submitter {
+  font-weight: bolder;
+  color: @OPNameColor;
+
+  &:before {
+    content: "OP - ";
+  }
+}
+
+.res-nightmode,
+html:lang(dm) {
+//  EXPERIMENTAL. Use dm.reddit.com/r/subreddit or RES to activate
+//  Any help fixing it is appriciated!
+
+//  @import "r-admicos.night.less";
+}
