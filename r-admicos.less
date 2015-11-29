@@ -1,26 +1,9 @@
 //out: r-admicos.compiled.css, compress: true
 
 /*
- * /r/admicos's theme. Can't think of a name yet.
+ * Cigdem Reddit Theme
  * by /u/admicos.
- *
- * Unless you don't delete this disclaimer/copyright thing. You can do whatever
- * you want with the css.
  */
-
-/*
- * How to use:
- *
- * So, if you just put this on the subreddit style thingie it will not work. To
- * fix this. You need to convert this to css.
- *
- * First: open up a LESS converter like http://lesscss.org/less-preview/.
- * Second: Put this code at the left field
- * Third: Get the code at the right field
- * OPTIONAL Third-and-a-half-th: Minify the code in somewhere like http://cssminifier.com/.
- * Fourth: Put the code at the right field to the subreddit style thingie.
- * Fifth: umm... Profit?
-*/
 
 /* Customize here */
 
@@ -147,14 +130,11 @@ a[href$="#s"] {
   #userbarToggle {
     background: transparent;
     border-right: 0;
+    left: -12px;
   }
 
-  .user {
+  span {
     color: white;
-
-    a {
-      margin-left: 10px;
-    }
   }
 
   .seperator {
@@ -230,6 +210,7 @@ a[href$="#s"] {
     border-color: @StickyBorder !important;
     border-style: solid;
     border-width: 1px;
+    padding-left: 4px !important;
   }
 
   .entry.RES-keyNav-activeElement {
@@ -257,9 +238,14 @@ body {
 }
 
 .res {
-  .beta-link {
-    margin-left: -40px;
-    margin-top: 2px;
+  .beta-hint {
+    left: -35px;
+    top: 5px;
+
+    a {
+      margin-left: 0;
+      width: 10px;
+    }
   }
 
   .entry.RES-keyNav-activeElement {
