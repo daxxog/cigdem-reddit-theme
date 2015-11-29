@@ -13,7 +13,10 @@
 @background-color: #eeeeee;
 //Subreddit's background color
 
-@header-color: rgb(0, 178, 255);
+@main-color: rgb(0, 178, 255);
+//Theme's main color. Used in buttons etc
+
+@header-color: @main-color;
 //Subreddit's header color
 //PROTIP: Change the header color to a image by putting `url(%%image%%)` instead of a color.
 
@@ -31,6 +34,9 @@
 
 @OPNameColor: rgb(0, 26, 255);
 //The color of the OP's name in the comments.
+
+@SubmitMouseoverLight: 10%;
+//How much light should the submit button have when mouse gets over it.
 
 @StickyBorder: #00ff00;
 //The border color for the sticky posts.
@@ -51,6 +57,26 @@
 /*=============================================================*/
 
 .morelink {
+  transition: all 0.5s ease-in-out 0s;
+  background: @main-color;
+  box-shadow: inset 0px 5px 121px -61px @shadow-color-header;
+  border: 0;
+
+  &:hover {
+    transition: all 0.5s ease-in-out 0s;
+    background: lighten(@main-color, @SubmitMouseoverLight);
+  }
+
+  a {
+    transition: all 0.5s ease-in-out 0s;
+    color: #cccccc;
+
+    &:hover {
+      transition: all 0.5s ease-in-out 0s;
+      color: #ffffff;
+    }
+  }
+
   .nub {
     display: none;
   }
