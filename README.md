@@ -1,4 +1,4 @@
-# r/admicos Theme
+# Cigdem Reddit Theme
 The theme on http://reddit.com/r/admicos
 
 ##How to use (customized)
