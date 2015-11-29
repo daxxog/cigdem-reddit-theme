@@ -61,6 +61,8 @@
   background: @main-color;
   box-shadow: inset 0px 5px 121px -61px @shadow-color-header;
   border: 0;
+  border-radius: 10px;
+  padding: 3px;
 
   &:hover {
     transition: all 0.5s ease-in-out 0s;
@@ -127,6 +129,11 @@ a[href$="#s"] {
         text-shadow: none;
         color: gray;
     }
+}
+
+#search input[type="text"] {
+  border: 0;
+  border-radius: 10px;
 }
 
 #sr-header-area {
