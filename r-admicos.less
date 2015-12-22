@@ -14,7 +14,7 @@
 //Subreddit's background color
 
 @use-bg-image: false;
-//Use the white noise background
+//Use page background
 
 @bg-image: url(%%background%%);
 //if you don't want to use any images, just disable @use-bg-image. It won't even be in the CSS after conversion
@@ -46,6 +46,9 @@
 
 @StickyBorder: #00ff00;
 //The border color for the sticky posts.
+
+@tab-border-roundness: 25%;
+//How rounded should the tab borders be?
 
 @readers-text: " people subscribed";
 @usershere-text: " currently browsing";
@@ -224,7 +227,7 @@ a[href$="#s"] {
   left: 35px;
 
   li a {
-    border-radius: 25%;
+    border-radius: @tab-border-roundness;
     border-color: #369;
     border-image: none;
     border-style: solid;
